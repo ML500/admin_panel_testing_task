@@ -1,0 +1,109 @@
+[
+{
+  "model": "api.category",
+  "pk": 3,
+  "fields": {
+    "category_name": "News",
+    "category_parent": null
+  }
+},
+{
+  "model": "api.category",
+  "pk": 4,
+  "fields": {
+    "category_name": "Crime",
+    "category_parent": 3
+  }
+},
+{
+  "model": "api.category",
+  "pk": 5,
+  "fields": {
+    "category_name": "Political",
+    "category_parent": 3
+  }
+},
+{
+  "model": "api.category",
+  "pk": 6,
+  "fields": {
+    "category_name": "Sport",
+    "category_parent": null
+  }
+},
+{
+  "model": "api.category",
+  "pk": 7,
+  "fields": {
+    "category_name": "Football",
+    "category_parent": 6
+  }
+},
+{
+  "model": "api.category",
+  "pk": 8,
+  "fields": {
+    "category_name": "Chess",
+    "category_parent": 6
+  }
+},
+{
+  "model": "api.article",
+  "pk": 3,
+  "fields": {
+    "category": 4,
+    "user": 1,
+    "article_name": "Crime Chronical",
+    "article_description": "Very bad criminal news",
+    "article_image": "/inmate-feat.jpg"
+  }
+},
+{
+  "model": "api.article",
+  "pk": 4,
+  "fields": {
+    "category": 7,
+    "user": 3,
+    "article_name": "Daily footbal news",
+    "article_description": "Sensation !!! Man United 0  - 5 Liverpool",
+    "article_image": "/GIECAHB5E5DKFJDRTRUAOCDE7I_327oNTO.webp"
+  }
+},
+{
+  "model": "api.article",
+  "pk": 5,
+  "fields": {
+    "category": 8,
+    "user": 1,
+    "article_name": "Chees news",
+    "article_description": "Magnus Carlsen best chess player in the world",
+    "article_image": "/5472.jpg"
+  }
+},
+{
+  "model": "users.customuser",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$coPmxq8Fu370mMPe7rWywR$VpRZ2clBLnd/7JfLesJFMIBYNn52xsvhzK40m3x3LHU=",
+    "last_login": "2021-10-29T15:14:40.463Z",
+    "username": "admin",
+    "is_active": true,
+    "is_staff": true,
+    "is_admin": true,
+    "is_superuser": true
+  }
+},
+{
+  "model": "users.customuser",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$yOvBra7lIu8TZLVkrAq5Kw$UsC8IgDgCtkrkRwmefdJlt3X6omFygWPbCDBbat+Fsk=",
+    "last_login": null,
+    "username": "admin2",
+    "is_active": true,
+    "is_staff": false,
+    "is_admin": false,
+    "is_superuser": false
+  }
+}
+]

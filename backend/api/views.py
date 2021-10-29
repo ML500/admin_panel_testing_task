@@ -51,6 +51,7 @@ def userApi(request, id=0):
         return JsonResponse('Failed to Add', safe=False)
     elif request.method == 'PUT':
         user_data = JSONParser().parse(request)
+        print(user_data)
         user = CustomUser.objects.get(user_id=user_data['user_id'])
         users_serializer = UserSerializer(user, data=user_data)
         if users_serializer.is_valid():
@@ -71,7 +72,6 @@ def articleApi(request, id=0):
         return JsonResponse(articles_serializer.data, safe=False)
     elif request.method == 'POST':
         article_data = JSONParser().parse(request)
-        print(article_data)
         articles_serializer = ArticleSerializerPOST(data=article_data)
         if articles_serializer.is_valid():
             articles_serializer.save()
