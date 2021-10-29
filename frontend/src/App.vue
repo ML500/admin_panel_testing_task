@@ -1,30 +1,42 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view/>
+    <div id="nav">
+        <div v-if="this.$store.state.isAuthenticated">
+            <button @click="$router.push('home')">Home</button>
+            |
+            <button v-on:click="logout">Logout</button>
+        </div>
+        <div v-else>
+            <button @click="$router.push('sign-up')">Sign Up</button>
+            |
+            <button @click="$router.push('log-in')">Log In</button>
+        </div>
+    </div>
+    <router-view/>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+    import axios from 'axios'
 
-#nav {
-  padding: 30px;
+    export default {
+        name: 'App',
+        beforeCreate() {
+            this.$store.commit('initializeStore')
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+            const token = this.$store.token
+            if (token) {
+                axios.defaults.headers.common['Authorization'] = 'Token ' + token
+            } else {
+                axios.defaults.headers.common['Authorization'] = ''
+            }
+        },
+        methods: {
+            logout() {
+                localStorage.clear();
+                this.$router.push('/log-in')
+                    .catch((err) => {console.log(err)})
+                // window.location.reload();
+            }
+        }
     }
-  }
-}
-</style>
+</script>
+
