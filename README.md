@@ -32,3 +32,7 @@
   * npm install axios
 * Run frontend
   * npm run serve
+
+## Superuser:
+ * login: admin
+ * password: admin
