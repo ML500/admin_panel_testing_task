@@ -6,6 +6,7 @@
 * Vue Js v3
 * Sqlite3
 * Djoser
+* pytest
 
 
 ## Installation
