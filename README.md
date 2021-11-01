@@ -36,3 +36,7 @@
 ## Superuser:
  * login: admin
  * password: admin
+
+## Run pytest:
+ * cd admin_panel/backend
+ * pytest
